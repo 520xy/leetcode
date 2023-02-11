@@ -76,6 +76,7 @@ package editor.cn;//给你两个 非空 的链表，表示两个非负的整数�
 //              if(l2!=null)
 //              l2=l2.next;
 //          }
+//          //最后这里可能也需要一个进位
 //          if(decade!=0)
 //              post.next = new ListNode(1, null);
 //     return pre.next;
