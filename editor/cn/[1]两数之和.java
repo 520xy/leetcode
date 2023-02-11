@@ -49,19 +49,19 @@ package editor.cn;//给定一个整数数组 nums 和一个整数目标值 targe
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-import java.util.Hashtable;
-class Solution {
-    public int[] twoSum(int[] nums, int target) {
-        Hashtable<Integer, Integer> hashtable=new Hashtable<Integer, Integer>();
-        for (int i = 0; i < nums.length; i++) {
-            if(hashtable.containsKey(target-nums[i])){
-                return new int[]{hashtable.get(target-nums[i]),i};
-            }
-            else {
-                hashtable.put(nums[i],i);
-            }
-        }
-        return null;
-    }
-}
+//import java.util.Hashtable;
+//class Solution {
+//    public int[] twoSum(int[] nums, int target) {
+//        Hashtable<Integer, Integer> hashtable=new Hashtable<Integer, Integer>();
+//        for (int i = 0; i < nums.length; i++) {
+//            if(hashtable.containsKey(target-nums[i])){
+//                return new int[]{hashtable.get(target-nums[i]),i};
+//            }
+//            else {
+//                hashtable.put(nums[i],i);
+//            }
+//        }
+//        return null;
+//    }
+//}
 //leetcode submit region end(Prohibit modification and deletion)
