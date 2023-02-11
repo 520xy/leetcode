@@ -1,4 +1,4 @@
-//给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。 
+package editor.cn;//给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target 的那 两个 整数，并返回它们的数组下标。
 //
 // 你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。 
 //
@@ -46,10 +46,22 @@
 // Related Topics 数组 哈希表 👍 16286 👎 0
 
 
+
+
 //leetcode submit region begin(Prohibit modification and deletion)
+import java.util.Hashtable;
 class Solution {
     public int[] twoSum(int[] nums, int target) {
-
+        Hashtable<Integer, Integer> hashtable=new Hashtable<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            if(hashtable.containsKey(target-nums[i])){
+                return new int[]{hashtable.get(target-nums[i]),i};
+            }
+            else {
+                hashtable.put(nums[i],i);
+            }
+        }
+        return null;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
