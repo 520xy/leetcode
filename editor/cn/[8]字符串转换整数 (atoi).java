@@ -1,4 +1,4 @@
-//请你来实现一个 myAtoi(string s) 函数，使其能将字符串转换成一个 32 位有符号整数（类似 C/C++ 中的 atoi 函数）。 
+package editor.cn;//请你来实现一个 myAtoi(string s) 函数，使其能将字符串转换成一个 32 位有符号整数（类似 C/C++ 中的 atoi 函数）。
 //
 // 函数 myAtoi(string s) 的算法如下： 
 //
@@ -81,10 +81,51 @@
 // Related Topics 字符串 👍 1604 👎 0
 
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int myAtoi(String s) {
+import java.util.regex.*;
 
-    }
-}
+//leetcode submit region begin(Prohibit modification and deletion)
+//class Solution {
+//    public int myAtoi(String str) {
+//        if(str==null||str.equals("")) return 0;
+//        //去除原始字符串前后空格
+//        str=str.trim();
+//        //用于记录是否为负数（假定的不是）
+//        boolean isNega=false;
+//        if(str.length()>=1&&(str.charAt(0)=='-'||str.charAt(0)=='+')){
+//            //是负数就改变isNega的值，改为true
+//            isNega=str.charAt(0)=='-';
+//            //确定有符号+，-就截取掉
+//            str=str.substring(1,str.length());
+//        }
+//        //截掉符号后，如果为""或者第一个数字不是数字字符，说明前缀不是数字直接return 0即可
+//        if(str.length()<1||'0'>str.charAt(0)||str.charAt(0)>'9') return 0;
+//        //i是用于循环计数取字符，ans是结果
+//        int i=0,ans=0;
+//        //如果没有遍历完字符串，且连续的字符串都是数字（后面不是数字的不管）
+//        while(i<str.length()&&'0'<=str.charAt(i)&&str.charAt(i)<='9'){
+//            //字符变数字,这里是正数（从左到右看）
+//            int temp=str.charAt(i)-'0';
+//            //因为确定了符号看截取的数字需不需要*-1改变符号（每个数字都要用一次，保证负数永远加负数）
+//            if(isNega) temp*=-1;
+//            //ans先判断再加也是为了不越界，否则要用long（感觉用long判断条件不用这么麻烦，可以先算再判断，这样就不用思考小细节了）
+//            //这里的判断条件更精确，ans>Integer.MAX_VALUE/10，ans和Integer.MAX_VALUE/10都是整数，ans至少大1，所以*10就至少大10比7大
+//    //ans==Integer.MAX_VALUE/10&&temp > 7，Integer.MAX_VALUE的个位数是7，如果temp大于7那么ans*10+temp必定大于Integer.MAX_VALUE
+//            if(ans>Integer.MAX_VALUE/10||(ans==Integer.MAX_VALUE/10&&temp > 7)){
+//                return Integer.MAX_VALUE;
+//            }
+//            //Integer.MIN_VALUE个位是-8，如果temp小于-8那么ans*10+temp必定小于Integer.MIN_VALUE
+//            if(ans<Integer.MIN_VALUE/10||(ans==Integer.MIN_VALUE/10&&temp <-8)){
+//                return Integer.MIN_VALUE;
+//            }
+//            //判断完了没有返回，就直接+即可
+//            ans=ans*10+temp;
+//            //进入下一个字符进行判断
+//            i++;
+//        }
+//        //返回结果
+//        return ans;
+//
+//    }
+//}
+
 //leetcode submit region end(Prohibit modification and deletion)
