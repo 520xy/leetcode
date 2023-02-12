@@ -44,11 +44,32 @@ package editor.cn;//给你一个 32 位的有符号整数 x ，返回将 x 中�
 // Related Topics 数学 👍 3754 👎 0
 
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int reverse(int x) {
+import java.util.Arrays;
 
-        return 0;
-    }
-}
+//leetcode submit region begin(Prohibit modification and deletion)
+//class Solution {
+//    public int reverse(int x) {
+//        //准备接反转的数
+//        int ans = 0;
+//
+//        while (x != 0) {
+//            //不停取个位拼给ans
+//            //余数也可以取负数
+//            //这里是先取后除
+//            int pop = x % 10;
+//      //为什么要/10，ans有范围限制写成ans*10+pop>Integer.MAX_VALUE如果超过Integer.MAX_VALUE就会乱数
+//            //不这么写也行但是ans就不要定义成int，需要定义成long
+//            if (ans > Integer.MAX_VALUE/10  )
+//                return 0;
+//            if (ans< Integer.MIN_VALUE/10  )
+//                return 0;
+//            //这里写在下面就是怕超过Integer.MAX_VALUE的范围，所以根据技巧先判断在加
+//            ans = ans * 10 + pop;
+//            //个位变十位，把新的个位加进来
+//            x /= 10;
+//        }
+//        return ans;
+//    }
+//}
+
 //leetcode submit region end(Prohibit modification and deletion)
