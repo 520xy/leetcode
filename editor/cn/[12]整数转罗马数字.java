@@ -70,11 +70,36 @@ package editor.cn;//罗马数字包含以下七种字符： I， V， X， L，C
 // Related Topics 哈希表 数学 字符串 👍 1052 👎 0
 
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public String intToRoman(int num) {
+import java.util.*;
 
-        return null;
-    }
-}
+
+//leetcode submit region begin(Prohibit modification and deletion)
+//class Solution {
+//    //题目给的提示是使用哈希表，但是好像两个数组的效率更高
+//        public String intToRoman(int num) {
+//            //把罗马数字的所有基数对应的数值列出
+//            int[] nums = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+//            //把罗马数字的所有基数列出
+//            String[] value = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+//            //记录遍历头尾
+//            int i = 0,n = nums.length;
+//            //用这个包装一下拼接效率更好
+//            StringBuilder sb = new StringBuilder();
+//            //开始遍历
+//            while(i < n){
+//                //如果当前数大于基数，则从基数大的开始拼接
+//                if(num >= nums[i]){
+//                    //拼接基数对应的字符
+//                    sb.append(value[i]);
+//                    //拼接完后减去当前基数
+//                    num = num -nums[i];
+//                }
+//                  //看num是否依旧比当前基数大，有没有进入下一个基数的必要
+//                if(num < nums[i])    i++;
+//            }
+//            //拼接完成返回即可
+//            return sb.toString();
+//        }
+//
+//}
 //leetcode submit region end(Prohibit modification and deletion)
