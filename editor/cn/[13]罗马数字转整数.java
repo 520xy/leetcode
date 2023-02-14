@@ -75,11 +75,114 @@ package editor.cn;//罗马数字包含以下七种字符: I， V， X， L，C�
 // Related Topics 哈希表 数学 字符串 👍 2241 👎 0
 
 
-//leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int romanToInt(String s) {
+import java.util.HashMap;
+import java.util.Map;
 
-        return 0;
-    }
-}
+//leetcode submit region begin(Prohibit modification and deletion)
+//class Solution {
+//    //我的做法不是最优，最优的在下面
+//    public int romanToInt(String s) {
+//        //定义一个HashMap数组，本来定义的是HashTable但是好像有错误
+//        Map hashtable = new HashMap<Character, Integer>();
+//        //进行单个初始化即可（其余的如CM之类的在下面会单独给出的）
+//        hashtable.put('M',1000);
+//        hashtable.put('D',500);
+//        hashtable.put('C',100);
+//        hashtable.put('L',50);
+//        hashtable.put('X',10);
+//        hashtable.put('V',5);
+//        hashtable.put('I',1);
+//        //定义返回值
+//           int sum=0;
+//           //遍历罗马字符串
+//           for(int i=0;i<s.length();i++) {
+//               //获取第一个字母
+//               char temp = s.charAt(i);
+//               //对第二个字母进行判断，看其是否是是特殊的两个字符
+//               if(i+1<s.length()&&temp=='C')
+//               {
+//                   //这里之所以只+1因为结束的时候会自动+1
+//                   if(s.charAt(i+1)=='M'){
+//                       sum+=900;
+//                       i++;
+//                   }
+//                   else if(s.charAt(i+1)=='D'){
+//                       sum+=400;
+//                       i++;
+//                   }
+//                   else
+//                       sum+=100;
+//               }
+//               else if(i+1<s.length()&&temp=='X'){
+//                   if(s.charAt(i+1)=='C'){
+//                       sum+=90;
+//                       i++;
+//                   }
+//                   else if(s.charAt(i+1)=='L'){
+//                       sum+=40;
+//                       i++;
+//                   }
+//                   else
+//                       sum+=10;
+//
+//               } else if(i+1<s.length()&&temp=='I'){
+//                   if(s.charAt(i+1)=='X'){
+//                       sum+=9;
+//                       i++;
+//                   }
+//                   else if(s.charAt(i+1)=='V'){
+//                       sum+=4;
+//                       i++;
+//                   }
+//                   else
+//                       sum+=1;
+//               }
+//               else
+//                   //走完双字符逻辑，进入这里
+//                   sum += (int)hashtable.get(temp);
+//           }
+//        return sum;
+//    }
+//}
+//
+
+
+////import java.util.*;
+////
+////class Solution {
+////    //这个做法是最优的
+////    public int romanToInt(String s) {
+////        int sum = 0;
+////        //preNum进行初始化
+////        int preNum = getValue(s.charAt(0));
+////        for(int i = 1;i < s.length(); i ++) {
+////            int num = getValue(s.charAt(i));
+////            //这里巧妙的把特殊双字符处理了，双字符的关系是大-小
+////            //第一次把小的减去，第二次加上大的
+////            if(preNum < num) {
+////                sum -= preNum;
+////            } else {
+////                sum += preNum;
+////            }
+////            preNum = num;
+////        }
+////        //因为i从i开始所有最后一次需要手动执行（最后一次一定为加）
+////        sum += preNum;
+////        return sum;
+////    }
+////    //此函数用于获取单个字符的值，比较字符的大小
+////    private int getValue(char ch) {
+////        switch(ch) {
+////            case 'I': return 1;
+////            case 'V': return 5;
+////            case 'X': return 10;
+////            case 'L': return 50;
+////            case 'C': return 100;
+////            case 'D': return 500;
+////            case 'M': return 1000;
+////            default: return 0;
+////        }
+////    }
+////}
+
 //leetcode submit region end(Prohibit modification and deletion)
