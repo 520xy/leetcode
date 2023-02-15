@@ -66,8 +66,8 @@ import java.util.List;
 //        for(int head=0;head< nums.length-2;head++) {
 //            //当nums[head]>0时说明nums[mid]>0,nums[tail]>0
 //            if(nums[head]>0)break;
-//            //每次获取新head时mid和tail需要重新初始化，nums[mid]表示nums[head]右边第一个数，nums[tail]
-//            //始终数组表示最后一个数
+//            //每次获取新head时mid和tail需要重新初始化，nums[mid]表示nums[head]右边第一个数，
+//            //nums[tail]始终数组表示最后一个数
 //            int tail=nums.length-1,mid=head+1;
 //            //固定head，移动mid，tail
 //            while (mid<tail)
