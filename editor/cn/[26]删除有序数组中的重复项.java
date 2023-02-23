@@ -1,4 +1,4 @@
-//给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致 
+package editor.cn;//给你一个 升序排列 的数组 nums ，请你 原地 删除重复出现的元素，使每个元素 只出现一次 ，返回删除后数组的新长度。元素的 相对顺序 应该保持 一致
 //。 
 //
 // 由于在某些语言中不能改变数组的长度，所以必须将结果放在数组nums的第一部分。更规范地说，如果在删除重复项之后有 k 个元素，那么 nums 的前 k 个
@@ -57,9 +57,24 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
-    public int removeDuplicates(int[] nums) {
-
-    }
-}
+//class Solution {
+//    public int removeDuplicates(int[] nums) {
+//        //快速判断
+//        if(nums==null)return 0;
+//        //定义双指针
+//         short slowPoint=1,fastPoint=1;
+//         //快指针移动
+//        for ( ;fastPoint < nums.length; fastPoint++) {
+//            //如果快指针遇到新的数
+//            if (nums[fastPoint] != nums[fastPoint-1]) {
+//                //慢指针赋值
+//                nums[slowPoint] = nums[fastPoint];
+//                //慢指针移动
+//                slowPoint++;
+//            }
+//        }
+//        //返回结果
+//        return slowPoint;
+//    }
+//}
 //leetcode submit region end(Prohibit modification and deletion)
