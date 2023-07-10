@@ -59,9 +59,10 @@ import java.util.Arrays;
 //            int pop = x % 10;
 //      //为什么要/10，ans有范围限制写成ans*10+pop>Integer.MAX_VALUE如果超过Integer.MAX_VALUE就会乱数
 //            //不这么写也行但是ans就不要定义成int，需要定义成long
-//            if (ans > Integer.MAX_VALUE/10  )
+//            //这里如果ans直接越界了10倍就好说，如果正好没有越界，就要看个位数是否越界
+//            if (ans > Integer.MAX_VALUE/10|||| (ans == Integer.MAX_VALUE / 10 && pop > 7))
 //                return 0;
-//            if (ans< Integer.MIN_VALUE/10  )
+//            if (ans< Integer.MIN_VALUE/10 ||(ans == Integer.MIN_VALUE / 10 && pop < -8) )
 //                return 0;
 //            //这里写在下面就是怕超过Integer.MAX_VALUE的范围，所以根据技巧先判断在加
 //            ans = ans * 10 + pop;

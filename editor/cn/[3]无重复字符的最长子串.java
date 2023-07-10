@@ -63,7 +63,7 @@ package editor.cn;//给定一个字符串 s ，请你找出其中不含有重复
 //            else if(i>0){
 //                //确定头部索引位置，map.get(s.charAt(i))不能直接作为头索引，
 //                // 防止txaat(如果遍历到第二个t时跳回第一个t)
-//                //这样写相当于固定了head，head不会受head之前的字符影响
+//                //这样写相当于固定了head，head不会受head之前的字符影响，相同的字符索都已经更新为最新的
 //                head= Math.max((int)map.get(s.charAt(i))+1,head);
 //                count=i-head+1;
 //            }
